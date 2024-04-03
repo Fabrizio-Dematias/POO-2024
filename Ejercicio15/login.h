@@ -7,8 +7,8 @@
 #include <QPushButton>
 #include <QGridLayout>
 #include <QMessageBox>
+#include <QRandomGenerator>
 
-// Agrega la declaración de Formulario solo si es necesario
 class Formulario;
 
 class Login : public QWidget {
@@ -19,13 +19,11 @@ public:
 private slots:
     void verificarLogin();
     void abrirFormulario();
-    void mostrarMensajeInicioSesionExitoso();
 
 private:
     QLabel *lbl_usuario;
     QLabel *lbl_contrasena;
     QLabel *lbl_captcha;
-    QString captcha_value;
 
     QLineEdit *txt_usuario;
     QLineEdit *txt_contrasena;
@@ -33,7 +31,33 @@ private:
 
     QPushButton *btn_login;
 
-    Formulario *formulario; // Agrega la declaración de Formulario solo si es necesario
+    Formulario *formulario;
+};
+
+class Formulario : public QWidget {
+    Q_OBJECT
+public:
+    Formulario(QWidget *parent = nullptr);
+
+private slots:
+    void limpiarCampos();
+    void verificarCaptcha();
+
+private:
+    QLabel *lbl_legajo;
+    QLabel *lbl_nombre;
+    QLabel *lbl_apellido;
+    QLabel *lbl_captcha;
+
+    QLineEdit *txt_legajo;
+    QLineEdit *txt_nombre;
+    QLineEdit *txt_apellido;
+    QLineEdit *txt_captcha;
+
+    QPushButton *btn_enviar;
+    QPushButton *btn_limpiar;
+
+    int captcha_generado;
 };
 
 #endif // LOGIN_H
