@@ -1,7 +1,11 @@
-QT += widgets
+QT += widgets network
+QT += network
 
-SOURCES += main.cpp \
-    login.cpp
+CONFIG += c++11
+
+SOURCES += \
+    main.cpp \
+    login.cpp \
 
 HEADERS += \
-    login.h
+    login.h \
