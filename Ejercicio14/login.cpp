@@ -140,3 +140,5 @@ void Formulario::limpiarCampos() {
     txt_nombre->clear();
     txt_apellido->clear();
 }
+
+
