@@ -1,11 +1,8 @@
-QT += widgets network
-QT += network
-
-CONFIG += c++11
+QT += core gui widgets network
 
 SOURCES += \
-    main.cpp \
     login.cpp \
+    main.cpp
 
 HEADERS += \
-    login.h \
+    login.h
