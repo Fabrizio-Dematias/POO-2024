@@ -25,3 +25,15 @@ async def get_all_users():
         users.append(user)
     return users
 
+@app.post("/validate-user/")
+async def validate_user(user: User):
+    user = collection.find_one({"usuario": user.usuario, "clave": user.clave})
+    if user:
+        return {"status": "ok"}
+    else:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    return f"{result['nombre']}::{result['apellido']}"
+
+
+
