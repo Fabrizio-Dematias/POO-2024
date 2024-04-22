@@ -1,14 +1,10 @@
-QT       += core gui
+QT += widgets network
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+SOURCES += \
+    home.cpp \
+    login.cpp \
+    main.cpp
 
-CONFIG += c++11
-
-TARGET = LoginApp
-TEMPLATE = app
-
-SOURCES += main.cpp \
-    login.cpp
-
-HEADERS  += \
+HEADERS += \
+    home.h \
     login.h

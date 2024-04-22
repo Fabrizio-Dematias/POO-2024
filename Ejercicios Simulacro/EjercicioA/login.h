@@ -1,29 +1,33 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
-#include <QDialog>
-#include <QLineEdit>
+#include <QWidget>
 #include <QLabel>
-#include <QGridLayout>
 
-class Login : public QDialog
-{
+class QLineEdit;
+
+class LoginWidget : public QWidget {
     Q_OBJECT
 
 public:
-    explicit Login(QWidget *parent = nullptr);
+    LoginWidget(QWidget *parent = nullptr);
 
 signals:
     void loginSuccessful();
 
 private slots:
-    void attemptLogin();
+    void validateUser();
 
 private:
-    QLineEdit *dniEdit;
-    QLineEdit *claveEdit;
-    QLabel *messageLabel;
-    int loginAttempts;
+    void setupUI();
+    void setupSignalsAndSlots();
+
+    QLineEdit *usernameEdit;
+    QLineEdit *passwordEdit;
+    int failedAttempts = 0;
 };
+
+// Declaración de la función LoadAvatar
+void LoadAvatar(const QString &strAvatarUrl, QLabel &label);
 
 #endif // LOGIN_H
