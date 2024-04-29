@@ -74,5 +74,3 @@ void Ventana::clearCanvas()
     canvas.fill(Qt::white);
     update();
 }
-
-
