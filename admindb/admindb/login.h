@@ -1,16 +1,20 @@
+
 #ifndef LOGIN_H
 #define LOGIN_H
 
 #include <QWidget>
+
 #include "ventana.h"
+#include "admindb.h"
+
+
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class Login;
-}
+namespace Ui { class Login; }
 QT_END_NAMESPACE
 
 class Login : public QWidget
+
 {
     Q_OBJECT
 
@@ -21,10 +25,10 @@ public:
 private:
     Ui::Login *ui;
     Ventana * ventana;
+    AdminDB * adminDB;
 
-    // para cuando presionemos el boton, se ejecute este metodo
 private slots:
-    void slot_validar();
-
+    void slot_validarUsuario();
 };
+
 #endif // LOGIN_H
