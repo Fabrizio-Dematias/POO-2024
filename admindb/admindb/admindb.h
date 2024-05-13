@@ -1,12 +1,10 @@
-
 #ifndef ADMINDB_H
 #define ADMINDB_H
-
 
 #include <QObject>
 #include <QSqlDatabase>
 #include <QString>
-
+#include <QCryptographicHash> // Necesario para utilizar MD5
 
 class AdminDB : public QObject
 {
@@ -14,14 +12,13 @@ class AdminDB : public QObject
 public:
     explicit AdminDB(QObject *parent = nullptr);
 
-    bool conectar( QString archivoSqlite );
+    bool conectar(QString archivoSqlite);
     QSqlDatabase getDB();
 
-    bool validarUsuario( QString tabla, QString usuario, QString clave );
+    bool validarUsuario(QString tabla, QString usuario, QString clave);
 
 private:
     QSqlDatabase db;
-
 };
 
 #endif // ADMINDB_H
