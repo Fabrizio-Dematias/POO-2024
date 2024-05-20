@@ -74,4 +74,5 @@ Carpeta Ejercicio12:
 - Al cabo de 3 segundos, el QLabel y la aplicación se deberá cerrar
 
 Carpeta Ejercicio13:
-- 
+- Punto de partida: Usar el código del ejemplo del control de volumen
+- Cuando el valor del QSlider se modifique, colocar como título de la ventana el mismo valor que tiene el QSlider.
