@@ -4,25 +4,27 @@
 #include <QWidget>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QVBoxLayout>
 #include <QSqlDatabase>
-#include <QSqlQuery>
 
 class Login : public QWidget {
     Q_OBJECT
 
 public:
     explicit Login(QWidget *parent = nullptr);
+    ~Login();
+
+signals:
+    void loginSuccessful();
 
 private slots:
-    void onLoginButtonClicked();
+    void validateLogin();
 
 private:
-    QLineEdit *usernameLineEdit;
-    QLineEdit *passwordLineEdit;
+    QLineEdit *usernameEdit;
+    QLineEdit *passwordEdit;
     QPushButton *loginButton;
     QSqlDatabase db;
-
-    bool validateCredentials(const QString &username, const QString &password);
 };
 
 #endif // LOGIN_H

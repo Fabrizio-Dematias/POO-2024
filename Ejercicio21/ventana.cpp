@@ -1,18 +1,16 @@
 #include "ventana.h"
-#include <QVBoxLayout>
-#include "login.h"
 
 Ventana::Ventana(QWidget *parent) : QWidget(parent) {
+    backButton = new QPushButton("Volver", this);
+
     QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->addWidget(backButton);
 
-    volverButton = new QPushButton("Volver", this);
-    layout->addWidget(volverButton);
-
-    connect(volverButton, &QPushButton::clicked, this, &Ventana::onVolverButtonClicked);
+    connect(backButton, &QPushButton::clicked, this, &Ventana::handleBackButton);
 }
 
-void Ventana::onVolverButtonClicked() {
-    Login *login = new Login();
-    login->show();
-    this->close();
+Ventana::~Ventana() {}
+
+void Ventana::handleBackButton() {
+    emit backToLogin();
 }

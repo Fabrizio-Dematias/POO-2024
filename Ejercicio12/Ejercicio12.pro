@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,18 +9,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    login.cpp \
     main.cpp \
-    manager.cpp \
-    ventana.cpp
+    widget.cpp
 
 HEADERS += \
-    login.h \
-    manager.h \
-    ventana.h
+    widget.h
 
 FORMS += \
-    ventana.ui
+    widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

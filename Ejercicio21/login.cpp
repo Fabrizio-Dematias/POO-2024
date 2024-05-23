@@ -1,55 +1,45 @@
 #include "login.h"
-#include <QVBoxLayout>
 #include <QMessageBox>
-#include "ventana.h"
+#include <QSqlQuery>
+#include <QSqlError>
 
 Login::Login(QWidget *parent) : QWidget(parent) {
-    QVBoxLayout *layout = new QVBoxLayout(this);
-
-    usernameLineEdit = new QLineEdit(this);
-    usernameLineEdit->setPlaceholderText("Username");
-    passwordLineEdit = new QLineEdit(this);
-    passwordLineEdit->setPlaceholderText("Password");
-    passwordLineEdit->setEchoMode(QLineEdit::Password);
+    usernameEdit = new QLineEdit(this);
+    passwordEdit = new QLineEdit(this);
+    passwordEdit->setEchoMode(QLineEdit::Password);
     loginButton = new QPushButton("Login", this);
 
-    layout->addWidget(usernameLineEdit);
-    layout->addWidget(passwordLineEdit);
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->addWidget(usernameEdit);
+    layout->addWidget(passwordEdit);
     layout->addWidget(loginButton);
 
-    connect(loginButton, &QPushButton::clicked, this, &Login::onLoginButtonClicked);
+    connect(loginButton, &QPushButton::clicked, this, &Login::validateLogin);
 
-    // Configurar la base de datos SQLite
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("C:/Users/fabri/OneDrive/Escritorio/users.db");
 
     if (!db.open()) {
-        QMessageBox::critical(this, "Error", "Database connection failed.");
+        QMessageBox::critical(this, "Database Error", db.lastError().text());
     }
 }
 
-void Login::onLoginButtonClicked() {
-    QString username = usernameLineEdit->text();
-    QString password = passwordLineEdit->text();
-
-    if (validateCredentials(username, password)) {
-        Ventana *ventana = new Ventana();
-        ventana->show();
-        this->close();
-    } else {
-        QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
-    }
+Login::~Login() {
+    db.close();
 }
 
-bool Login::validateCredentials(const QString &username, const QString &password) {
+void Login::validateLogin() {
+    QString username = usernameEdit->text();
+    QString password = passwordEdit->text();
+
     QSqlQuery query;
-    query.prepare("SELECT * FROM usuarios WHERE username = :username AND password = :password");
+    query.prepare("SELECT * FROM users WHERE username = :username AND password = :password");
     query.bindValue(":username", username);
     query.bindValue(":password", password);
 
     if (query.exec() && query.next()) {
-        return true;
+        emit loginSuccessful();
     } else {
-        return false;
+        QMessageBox::warning(this, "Login Failed", "Invalid username or password");
     }
 }

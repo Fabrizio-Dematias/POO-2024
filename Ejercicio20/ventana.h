@@ -3,12 +3,16 @@
 
 #include <QWidget>
 
-class Ventana : public QWidget
+    class Ventana : public QWidget
 {
     Q_OBJECT
 
 public:
-    Ventana(QWidget *parent = nullptr);
+    explicit Ventana(QWidget *parent = nullptr);
+    ~Ventana();
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
 };
 
 #endif // VENTANA_H

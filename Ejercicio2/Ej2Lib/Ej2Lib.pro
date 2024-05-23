@@ -1,6 +1,8 @@
-QT       += core gui sql
+QT -= gui
+QT += core
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+TEMPLATE = lib
+DEFINES += EJ2LIB_LIBRARY
 
 CONFIG += c++17
 
@@ -9,20 +11,17 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    login.cpp \
-    main.cpp \
-    manager.cpp \
-    ventana.cpp
+    ej2lib.cpp \
+    ej2lib.cpp
 
 HEADERS += \
-    login.h \
-    manager.h \
-    ventana.h
-
-FORMS += \
-    ventana.ui
+    Ej2Lib_global.h \
+    Ej2Lib_global.h \
+    ej2lib.h \
+    ej2lib.h
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
+unix {
+    target.path = /usr/lib
+}
 !isEmpty(target.path): INSTALLS += target

@@ -1,17 +1,10 @@
 #include <QApplication>
-#include "login.h"
-#include "ventana.h"
+#include "manager.h"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    Ventana *ventana = new Ventana();
-    Login *login = new Login();
-    login->show();
 
-    int retCode = app.exec();
+    Manager manager;
 
-    delete login;
-    delete ventana;
-
-    return retCode;
+    return app.exec();
 }
