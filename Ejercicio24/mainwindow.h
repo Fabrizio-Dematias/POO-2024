@@ -2,11 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QFileDialog>
+#include <QPainter>
+#include <QImage>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QFileDialog>
-#include <QNetworkAccessManager>
-#include "htmlparser.h"
+#include <QLabel>
+#include <QVBoxLayout>
 
 class MainWindow : public QMainWindow
 {
@@ -14,19 +18,25 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-
-protected:
-    void paintEvent(QPaintEvent *event) override;
+    ~MainWindow();
 
 private slots:
-    void downloadResources();
-    void chooseFile();
+    void onDownloadButtonClicked();
+    void onSelectDirButtonClicked();
+    void onSelectImageButtonClicked();
+    void onHtmlDownloaded(QNetworkReply* reply);
+    void paintEvent(QPaintEvent* event);
 
 private:
+    QNetworkAccessManager *manager;
+    QString downloadDirectory;
+    QImage selectedImage;
+
     QLineEdit *urlLineEdit;
-    HtmlParser *parser;
-    QNetworkAccessManager *networkManager;
-    QString selectedImagePath;
+    QPushButton *downloadButton;
+    QPushButton *selectDirButton;
+    QPushButton *selectImageButton;
+    QLabel *directoryLabel;
 };
 
 #endif // MAINWINDOW_H

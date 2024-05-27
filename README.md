@@ -76,3 +76,31 @@ Carpeta Ejercicio12:
 Carpeta Ejercicio13:
 - Punto de partida: Usar el código del ejemplo del control de volumen
 - Cuando el valor del QSlider se modifique, colocar como título de la ventana el mismo valor que tiene el QSlider.
+
+Carpeta Ejercicio14
+- Diseñar un login con QGridLayout.
+- Usar asteriscos para la clave.
+- Detectar enter para simular la pulsación del botón.
+- Definir la clase Formulario que será un QWidget
+- Formulario tendrá QLabels y QLineEdits para Legajo, Nombre y Apellido, y un QPushButton
+- Si la clave ingresada es admin:1111, se cierra Login y se muestra Formulario
+- Si se ingresa otra clave se borrará el texto del QLineEdit de la clave.
+
+Implementaciones al ejercicio:
+- Publicar en la ventana de Login, la temperatura actual en la Ciudad de Córdoba. Usar alguna API disponible.
+- Agregar un método en Login que permita mostrar u ocultar la información de la temperatura.
+- Además que la ventana de Login tenga como background una imagen descargada de interner, centrada y adaptada en tamaño, sin deformar su aspecto y - que permita al usuario que modifique el tamaño del Login y que se siga viendo correctamente la imagen.
+- Agregar un método en Login que permita indicar la URL de la imagen que se mostrará en el background. En caso que nunca se invoque a este método, ninguna imagen se mostrará.
+
+Carpeta Ejercicio15:
+
+Carpeta Ejercicio16:
+- Registrar en MongoDB algunos usuarios (nombre, apellido, usuario, clave)
+- Tener disponible un endpoint con FastAPI para validar usuarios.
+
+Carpeta Ejercicio17:
+- Diseñar un login que cargue como fondo, una imagen descargada de internet
+- Cuando un usuario sea válido, que se abra en full screen otra ventana (definida en la clase Ventana) y que tenga otra imagen descargada de internet en su interior, abarcando toda la ventana.
+- Esta ventana no deberá abrirse hasta tanto se haya descargado la imagen.
+- La imagen no se debe deformar al visualizarse.
+
