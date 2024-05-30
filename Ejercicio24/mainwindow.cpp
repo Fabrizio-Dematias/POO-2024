@@ -156,7 +156,7 @@ void MainWindow::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     if (!selectedImage.isNull()) {
-        painter.drawImage(10, 150, selectedImage);  // Ajusta la posición según sea necesario
+        painter.drawImage(10, 150, selectedImage);
     }
     QMainWindow::paintEvent(event);
 }

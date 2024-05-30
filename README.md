@@ -91,6 +91,11 @@ Implementaciones al ejercicio:
 - Agregar un método en Login que permita mostrar u ocultar la información de la temperatura.
 - Además que la ventana de Login tenga como background una imagen descargada de interner, centrada y adaptada en tamaño, sin deformar su aspecto y - que permita al usuario que modifique el tamaño del Login y que se siga viendo correctamente la imagen.
 - Agregar un método en Login que permita indicar la URL de la imagen que se mostrará en el background. En caso que nunca se invoque a este método, ninguna imagen se mostrará.
+- Incorporar la validación de usuarios con QSLite.
+- Todo lo que se haga con la base de datos, que se encuentre en la clase AdminDB
+- Implementar en AdminDB el uso de MD5 para las claves de los usuarios.
+- Acondicionar para que el método utilizado sea el siguiente:
+- Definir en Login una signal que se emita cada vez que un usuario se loguee exitosamente. La signal debe emitir el nombre de usuario.
 
 Carpeta Ejercicio15:
 
@@ -104,3 +109,67 @@ Carpeta Ejercicio17:
 - Esta ventana no deberá abrirse hasta tanto se haya descargado la imagen.
 - La imagen no se debe deformar al visualizarse.
 
+Carpeta Ejercicio18:
+- Utilizar un proyecto con un login cualquiera que valide admin:1234
+- Cuando el usuario es válido, abrir una nueva ventana que tenga un QTextEdit que permita mostrar código HTML.
+- Esta ventana deberá tener un QLineEdit que permita ingresar una URL
+- Cuando se pulse Enter, se deberá buscar el html de la URL escrita y se deberá publicar en el QTextEdit.
+
+Carpeta Ejercicio19:
+- Crear una clase Pintura que herede de QWidget y que permita dibujar a mano alzada con el mouse.
+- Con el scroll permitirá ampliar y disminuir el tamaño del trazo del pincel.
+- Con las teclas R, G y B se cambia el color del pincel.
+- Con Escape se borra todo lo que esté dibujado.
+
+Carpeta Ejercicio20:
+- Crear un proyecto Qt Widget Application con un QWidget que sea la clase Ventana
+- Crear una clase Boton que hereda de QWidget
+- Redefinir paintEvent en Boton y usar fillRect para dibujarlo de algún color
+- Usar QtDesigner para Ventana y Boton. Es decir, Designer Form Class
+- Definir la enumeración en Boton
+- Abrir el designer de Ventana y agregar 5 botones (objetos de la clase Boton). Promocionarlos
+- Usar para Ventana grid layout, usar espaciadores y usar todos los recursos posibles del QtDesigner
+- Dibujar un fondo agradable con paintEvent y drawImage
+- Que Boton tenga la señal signal_clic()
+![alt text](image.png)
+
+Carpeta Ejercicio21:
+- Definir dos QWidgets (una clase Login y una clase Ventana).
+- El Login validará al usuario contra una base SQLite
+- La Ventana sólo mostrará un QPushButton para "Volver" al login.
+- Crear solamente un objeto de Ventana y uno solo de Login.
+- Si sucede un problema en la compilación, analizar los motivos (respetar el enunciado).
+- Solucionar ese problema y ver la alternativa de hacerlo con Manager.
+
+Carpeta Ejercicio22:
+- Crear una clase base llamada Instrumento y las clases derivadas Guitarra, Bateria y Teclado.
+- La clase base tiene una función virtual pura llamada sonar().
+- Defina una función virtual verlo() que publique la marca del instrumento. Por defecto todos los instrumentos son de la marca Yamaha.
+- Utilice en la función main() un std::vector para almacenar punteros a objetos del tipo Instrumento. Instancie 5 objetos y agréguelos al std::vector.
+- Publique la marca de cada instrumento recorriendo el vector.
+- En las clases derivadas agregue los datos miembro "int cuerdas", "int teclas" e "int tambores" según corresponda. Por defecto, guitarra con 6 cuerdas, teclado con 61 teclas y batería con 5 tambores.
+- Haga que la clase Teclado tenga herencia múltiple, heredando además de una nueva clase Electrico. Todos los equipos del tipo "Electrico" tienen por defecto un voltaje de 220 volts. Esta clase deberá tener un destructor que al destruirse publique la leyenda "Desenchufado".
+- Al llamar a la función sonar(), se deberá publicar "Guitarra suena...", "Teclado suena..." o "Batería suena..." según corresponda.
+- Incluya los métodos get y set que crea convenientes.
+
+Carpeta Ejercicio23:
+- Reutilizar el código fuente de cualquier otro ejericio y utilizar herencia múltiple, inline y friend.
+- Implementar herencia múltiple, inline y friend cuando sea beneficioso hacerlo.
+( Se utilizo el codigo del ejercicio 22 para realizar este punto )
+
+Carpeta Ejercicio24:
+- Crear un parser que pueda analizar cualquier html en busca de todas las URLs que encuentre
+- Crear una GUI que permita al usuario ingresar un sitio web en un QLineEdit
+- Que descargue en archivos todos los recursos de dicho sitio web
+- Es decir, que busque en el html las imágenes, los css, los javascript y los descargue en archivos
+- Que le permita al usuario indicar en qué directorio descargar los archivos
+- También agregar un botón que upermita elegir un archivo de imagen del disco con QFileDialog y que la dibuje en pantalla con paintEvent.
+
+Carpeta Ejercicio25:
+- Construir un nuevo proyecto que tenga un Login independiente, es decir, que no dependa de otra clase GUI.
+- El Login tenga un QLabel que funciona como botón que sea para registrar un nuevo usuario.
+- Cuando se presiona el QLabel que funciona como botón, se abrirá una ventana para dar de alta un usuario.
+- Usar SQLite con AdminDB como singleton.
+- Cuando un usuario válido ingresa correctamente se mostrará otra ventana que visualizará todos los usuarios cargados en la base.
+- Para la visualización de los usuarios se puede usar QTreeWidget. Agregar la funcionalidad para que en esta misma ventana se puedan editar los campos como si fuera una planilla tipo excel.
+- Seguir las recomendaciones que se comentaron durante el dictado de clases para construir las clases.
