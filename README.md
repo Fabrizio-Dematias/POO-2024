@@ -165,7 +165,7 @@ Carpeta Ejercicio24:
 - Que le permita al usuario indicar en qué directorio descargar los archivos
 - También agregar un botón que upermita elegir un archivo de imagen del disco con QFileDialog y que la dibuje en pantalla con paintEvent.
 
-Carpeta Ejercicio25:
+Carpeta LoginApp:
 - Construir un nuevo proyecto que tenga un Login independiente, es decir, que no dependa de otra clase GUI.
 - El Login tenga un QLabel que funciona como botón que sea para registrar un nuevo usuario.
 - Cuando se presiona el QLabel que funciona como botón, se abrirá una ventana para dar de alta un usuario.
@@ -173,3 +173,5 @@ Carpeta Ejercicio25:
 - Cuando un usuario válido ingresa correctamente se mostrará otra ventana que visualizará todos los usuarios cargados en la base.
 - Para la visualización de los usuarios se puede usar QTreeWidget. Agregar la funcionalidad para que en esta misma ventana se puedan editar los campos como si fuera una planilla tipo excel.
 - Seguir las recomendaciones que se comentaron durante el dictado de clases para construir las clases.
+
+la base de datos "usuarios.db" se encuetra en la carpeta "build-LoginAPP-Desktop_Qt_5_15_16_MinGW_64_bit-Debug"
