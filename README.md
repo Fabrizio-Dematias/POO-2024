@@ -173,5 +173,3 @@ Carpeta LoginApp:
 - Cuando un usuario válido ingresa correctamente se mostrará otra ventana que visualizará todos los usuarios cargados en la base.
 - Para la visualización de los usuarios se puede usar QTreeWidget. Agregar la funcionalidad para que en esta misma ventana se puedan editar los campos como si fuera una planilla tipo excel.
 - Seguir las recomendaciones que se comentaron durante el dictado de clases para construir las clases.
-
-la base de datos "usuarios.db" se encuetra en la carpeta "build-LoginAPP-Desktop_Qt_5_15_16_MinGW_64_bit-Debug"

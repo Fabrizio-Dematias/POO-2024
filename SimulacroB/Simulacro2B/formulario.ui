@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Formulario</class>
+ <widget class="QWidget" name="Formulario">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Formulario</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QComboBox" name="instrumentoComboBox"/>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="marcaLineEdit">
+     <property name="placeholderText">
+      <string>Marca</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="precioLineEdit">
+     <property name="placeholderText">
+      <string>Precio</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="cuerdasLineEdit">
+     <property name="placeholderText">
+      <string>Cantidad de Cuerdas</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="teclasLineEdit">
+     <property name="placeholderText">
+      <string>Cantidad de Teclas</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="metalLineEdit">
+     <property name="placeholderText">
+      <string>Metal Usado</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="agregarButton">
+     <property name="text">
+      <string>Agregar Instrumento</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="verStockButton">
+     <property name="text">
+      <string>Ver Stock</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
