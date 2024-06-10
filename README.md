@@ -173,3 +173,6 @@
 - Cuando un usuario válido ingresa correctamente, se mostrará otra ventana que visualizará todos los usuarios cargados en la base.
 - Para la visualización de los usuarios se puede usar `QTreeWidget`. Agregar la funcionalidad para que en esta misma ventana se puedan editar los campos como si fuera una planilla tipo Excel.
 - Seguir las recomendaciones dadas durante el dictado de clases para construir las clases.
+
+## Carpetas Simulacro A,B,C,D:
+- En estas carpetas se ecuentran ejercicios de practica para el parcial 2 
