@@ -98,7 +98,8 @@
   - Definir en Login una signal que se emita cada vez que un usuario se loguee exitosamente. La signal debe emitir el nombre de usuario.
 
 ## Carpeta Ejercicio15:
-*(Vacío, sin especificaciones)*
+![image](https://github.com/Fabrizio-Dematias/POO-2024/assets/131211481/f2b9f690-d9d4-4196-a5a8-e780b37d003a)
+
 
 ## Carpeta Ejercicio16:
 - Registrar en MongoDB algunos usuarios (nombre, apellido, usuario, clave).
